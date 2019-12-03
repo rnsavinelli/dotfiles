@@ -1,0 +1,32 @@
+## University Research ##
+https://www.frba.utn.edu.ar/category/todaslasnoticias/feed/ "university" "~Universidad Tecnológica Nacional "
+https://ieee.frba.utn.edu.ar/?feed=rss2 "university" "courses" "~IEEE UTN"
+https://news.stanford.edu/section/science-technology/feed/ "university"
+https://news.stanford.edu/section/social-sciences/feed/ "university"
+https://news.harvard.edu/gazette/section/science-technology/feed/ "university"
+https://news.harvard.edu/gazette/section/national-world-affairs/feed/ "university"
+https://news.mit.edu/rss/school/engineering "university"
+https://news.mit.edu/rss/school/humanities-arts-and-social-sciences "university"
+
+## Tech News ##
+# https://spectrum.ieee.org/rss/fulltext "tech" "news"
+# http://rss.slashdot.org/Slashdot/slashdotMain "news" "tech"
+# https://www.technologyreview.com/topnews.rss "news" "tech" "~Technology Review"
+# https://www.eff.org/rss/updates.xml "news" "blog"
+# https://www.phoronix.com/rss.php "news" "tech"
+
+## Linux ##
+# https://forum.manjaro.org/c/announcements.rss "tech" "linux" "~Manjaro Linux: Forum announcements"
+# https://www.archlinux.org/feeds/news/ "tech" "linux"
+http://blog.linuxmint.com/?feed=rss2 "tech" "linux"
+https://mate-desktop.org/rss.xml "tech" "linux"
+https://www.latex-project.org/feed.xml "tech" "linux" "oss"
+
+## Institutional  ##
+http://ocw.mit.edu/rss/new/mit-newocwscholarcourses.xml "courses"
+https://ocw.mit.edu/rss/new/mit-newcourses-6.xml "courses"
+
+## Others ##
+http://www.teatrocolon.org.ar/es/rss.xml "theatre"
+https://lukesmith.xyz/rss.xml "not related"
+https://rnsavinelli.github.io/rss.xml "not related"

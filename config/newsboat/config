@@ -1,0 +1,11 @@
+# Colour settings
+color listfocus           white   black   reverse
+color listnormal_unread   green   black   bold
+color listfocus_unread    black   white   bold dim
+color info                white   black   standout bold
+
+# Browser
+browser firefox
+
+# Limit articles per feed
+max-items 35
