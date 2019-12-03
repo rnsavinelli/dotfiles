@@ -1,6 +1,6 @@
 ## For most configuration files
 
-Every file in repository goes inside the user folder except for the ones inside the 'others' folder.
+Every file in this repository goes inside the 'user' folder except for the ones inside the 'others' folder.
 
 In the future a script could be developed to automate this process.
 
