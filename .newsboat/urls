@@ -17,9 +17,9 @@ https://news.mit.edu/rss/school/humanities-arts-and-social-sciences "university"
 
 ## Linux ##
 # https://forum.manjaro.org/c/announcements.rss "tech" "linux" "~Manjaro Linux: Forum announcements"
-# https://www.archlinux.org/feeds/news/ "tech" "linux"
-http://blog.linuxmint.com/?feed=rss2 "tech" "linux"
-https://mate-desktop.org/rss.xml "tech" "linux"
+https://www.archlinux.org/feeds/news/ "tech" "linux"
+# http://blog.linuxmint.com/?feed=rss2 "tech" "linux"
+# https://mate-desktop.org/rss.xml "tech" "linux"
 https://www.latex-project.org/feed.xml "tech" "linux" "oss"
 
 ## Institutional  ##
@@ -27,6 +27,6 @@ http://ocw.mit.edu/rss/new/mit-newocwscholarcourses.xml "courses"
 https://ocw.mit.edu/rss/new/mit-newcourses-6.xml "courses"
 
 ## Others ##
-http://www.teatrocolon.org.ar/es/rss.xml "theatre"
+# http://www.teatrocolon.org.ar/es/rss.xml "theatre"
 https://lukesmith.xyz/rss.xml "not related"
 https://rnsavinelli.github.io/rss.xml "not related"

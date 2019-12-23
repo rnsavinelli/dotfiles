@@ -5,3 +5,5 @@ alias df='df -h'                                            # human-readable siz
 alias free='free -m'                                        # show sizes in MB
 alias more=less
 
+# NVIDIA PRIME
+alias offload='DRI_PRIME=1'
