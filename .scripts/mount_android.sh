@@ -1,6 +1,7 @@
 # !/bin/bash
 # Mounts Android Phone
 # Only works for 1 device at a time
+# R. Nicolás Savinelli [09/Mar/2020]
 
 selection=1
 options=$(simple-mtpfs --list-devices | wc -l)
