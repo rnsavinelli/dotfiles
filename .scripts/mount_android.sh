@@ -18,12 +18,14 @@ else
     # IF MORE THAN ONE DEVICE IS AVAILABLE
     if [ "$options" -gt "1" ]; then
 	while true; do
-            read -p "Which device do yo want to mount? " selection
+            read -p "Which device do you want to mount? " selection
+
 	    if [ "$selection" -le "$options" ] && [ "$selection" -ge 1 ]; then
 		break
+
 	    else
 		echo "ERROR: Invalid selection"
-		break
+
 	    fi
 	done
     fi
