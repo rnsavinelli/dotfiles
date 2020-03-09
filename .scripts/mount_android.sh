@@ -19,10 +19,10 @@ else
     if [ "$options" -gt "1" ]; then
 	while true; do
             read -p "Which device do yo want to mount? " selection
-	    if [ "$selection" -gt "$options" ] || [ "$selection" -lt 1 ]; then
-		echo "ERROR: Invalid selection"
+	    if [ "$selection" -le "$options" ] && [ "$selection" -ge 1 ]; then
 		break
 	    else
+		echo "ERROR: Invalid selection"
 		break
 	    fi
 	done
