@@ -1,5 +1,5 @@
 # !/bin/bash
-# Mounts Android Phone
+# Script to automate the process of mounting android phones
 # Only works for 1 device at a time
 # R. Nicolás Savinelli [09/Mar/2020]
 
