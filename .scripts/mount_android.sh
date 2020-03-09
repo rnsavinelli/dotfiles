@@ -1,23 +1,42 @@
-#!/bin/bash
-# Mounts Android Phone if Available
+# !/bin/bash
+# Mounts Android Phone
 # Only works for 1 device at a time
 
-simple-mtpfs -l
+selection=1
+options=$(simple-mtpfs --list-devices | wc -l)
 
-if [ "$?" == "1" ]; then
+# IF NO DEVICE WAS FOUND
+if [ "$options" == "0" ]; then
     echo -e "WARNING: No mountable device was found\nExiting script." 1>&2
     exit 1
 
 else
-    mkdir ~/.mnt/
-    echo "Mounting device to ~/.mnt/ folder"
-    simple-mtpfs --device 1 ~/.mnt/
+    mkdir -p ~/.mnt/
+    echo "Available devices:"
+    simple-mtpfs --list-devices
+
+    # IF MORE THAN ONE DEVICE IS AVAILABLE
+    if [ "$options" -gt "1" ]; then
+	while true; do
+            read -p "Which device do yo want to mount? " selection
+	    if [ "$selection" -gt "$options" ] || [ "$selection" -lt 1 ]; then
+		echo "ERROR: Invalid selection"
+		break
+	    else
+		break
+	    fi
+	done
+    fi
+
+    echo "Mounting device number $selection to the ~/.mnt/ directory"
+    simple-mtpfs --device $selection ~/.mnt/
+
     if [ "$?" == "1" ]; then
-	echo -e "WARNING: Device couldn't be mounted\nExiting script." 1>&2
-	exit 1
+	echo -e "WARNING: Device could NOT be mounted\nExiting script." 1>&2
+        exit 1
+
     else
-        echo "Device mounted"
-        echo "Tip: Device can be unmounted by running \"umount ~/.mnt/\""
-	exit 0
+	echo -e "Device mounted successfully\nTip: Unmount your device by running $ umount ~/.mnt/"
+	# notify-send "Android device mounted to ~/.mnt/" "Unmount your device by running $ umount ~/.mnt/"
     fi
 fi
