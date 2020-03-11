@@ -38,6 +38,10 @@ set so=7	    " Set 7 lines to the cursor - when moving vertically using j/k
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 "" Colors and Fonts
+if $TERM == 'st-256color'
+    colo peachpuff
+endif
+
 syntax enable	    " Enable syntax highlighting
 
 " Enable 256 colors palette in Gnome Terminal
