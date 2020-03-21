@@ -2,6 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# Disable ctrl-s and ctrl-q
+stty -ixon
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -48,7 +51,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-green=$(tput setaf 29)
 blue=$(tput setaf 32)
 white=$(tput setaf 15)
 bold=$(tput bold)
@@ -58,20 +60,21 @@ if [ "$color_prompt" = yes ]; then
 	PS1='\[${bold}\]'
 	PS1+='\[${blue}\][\u@\h'	# username@hostname
 	PS1+='\[${white}\] \w'		# working directory
-	PS1+='\[${blue}\]]'
+	PS1+='\[${blue}\]] '
 	PS1+='\[${white}\]$ '
-	PS1+='\[${reset}\]'
+	PS1+='\[${reset}'
 else
     PS1='[\u@\h \W]\$ '
 fi
+
 unset color_prompt force_color_prompt
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias ls='ls -FXgh --group-directories-first --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -79,12 +82,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

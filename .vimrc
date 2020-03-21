@@ -1,58 +1,68 @@
-"" General Settings
-
-filetype plugin on  " Enable file type plugins
-filetype indent on
+" Use filetype-based syntax hilighting, ftplugins, and indentation.
+syntax on
+filetype plugin indent on
 
 " Set to auto read when a file is changed from the outside
 set autoread
 au FocusGained,BufEnter * checktime
 
+" Enables mouse support
+set mouse=a
+
+" More convenient Movement when lines are wrapped
+nmap j gj
+nmap k gk
+
 set wildmenu	    " Turn on the Wild menu
 
 let mapleader = "," " Map-leader
 
-set number	    " Show line numbers
+" Appearance and Behaviour
+set number          " Show line numbers
 set foldcolumn=1    " Add a bit extra margin to the left
 set linebreak	    " Break lines at word (requires Wrap lines)
 set showbreak=+++   " Wrap-broken line prefix
 set textwidth=120   " Line wrap (number of cols)
 set showmatch	    " Highlight matching brace
-set spell	    " Enable spell-checking
- 
+
+" Search settings
 set hlsearch	    " Highlight all search results
 set smartcase	    " Enable smart-case search
 set ignorecase	    " Always case-insensitive
 set incsearch	    " Searches for strings incrementally
 set ignorecase	    " Ignore case when searching
-set smartcase	    " When searching try to be smart about cases 
- 
+set smartcase	    " When searching try to be smart about cases
+
+" Turn off seach hilighting with <CR>.
+nnoremap <CR> :nohlsearch<CR><CR>
+
+" Tab settings
 set autoindent	    " Auto-indent new lines
-set cindent	    " Use 'C' style program indenting
+set cindent	        " Use 'C' style program indenting
 set shiftwidth=4    " Number of auto-indent spaces
 set smartindent	    " Enable smart-indent
 set smarttab	    " Enable smart-tabs
-set softtabstop=4   " Number of spaces per Tab
-set so=7	    " Set 7 lines to the cursor - when moving vertically using j/k
+set tabstop=4       " Number of spaces per Tab
+set expandtab       " Enable expand-tab
+
+set so=7	        " Set 7 lines to the cursor - when moving vertically using j/k
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-"" Colors and Fonts
-if $TERM == 'st-256color'
-    colo peachpuff
-endif
-
-syntax enable	    " Enable syntax highlighting
 
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-" Set UTF-8 as standard encoding and en_US as the standard language
+colo elflord
+
+" Set UTF-8 as standard encoding and en_GB as the standard language
 set encoding=utf8
 
-"" Status Line
+map <F6> :setlocal spell! spelllang=en_gb<CR> " Spell checker on/off
+
+" Status Line
 set laststatus=2    " Always show the status line
 
 " Format the status line
