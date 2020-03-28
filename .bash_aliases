@@ -1,7 +1,7 @@
 # Custom aliases
-alias cp='cp -i'                                            # confirm before overwriting something
-alias df='df -h'                                            # human-readable sizes
-alias free='free -m'                                        # show sizes in MB
+alias cp='cp -i'      # confirm before overwriting something
+alias df='df -h'      # human-readable sizes
+alias free='free -m'  # show sizes in MB
 alias more='less'
 alias sizeof='du -sh'
 

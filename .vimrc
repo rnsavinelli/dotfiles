@@ -1,6 +1,6 @@
-" Use filetype-based syntax hilighting, ftplugins, and indentation.
-syntax on
+" Use filetype-based syntax highlighting, ftplugins, and indentation.
 filetype plugin indent on
+syntax on
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -22,7 +22,7 @@ set number          " Show line numbers
 set foldcolumn=1    " Add a bit extra margin to the left
 set linebreak	    " Break lines at word (requires Wrap lines)
 set showbreak=+++   " Wrap-broken line prefix
-set textwidth=120   " Line wrap (number of cols)
+set textwidth=80   " Line wrap (number of cols)
 set showmatch	    " Highlight matching brace
 
 " Search settings
@@ -33,12 +33,11 @@ set incsearch	    " Searches for strings incrementally
 set ignorecase	    " Ignore case when searching
 set smartcase	    " When searching try to be smart about cases
 
-" Turn off seach hilighting with <CR>.
+" Turn off search highlighting with <CR>.
 nnoremap <CR> :nohlsearch<CR><CR>
 
 " Tab settings
 set autoindent	    " Auto-indent new lines
-set cindent	        " Use 'C' style program indenting
 set shiftwidth=4    " Number of auto-indent spaces
 set smartindent	    " Enable smart-indent
 set smarttab	    " Enable smart-tabs
@@ -50,17 +49,18 @@ set so=7	        " Set 7 lines to the cursor - when moving vertically using j/k
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-" Enable 256 colors palette in Gnome Terminal
+" Enable 256 colours palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-colo elflord
+colorscheme ron
 
 " Set UTF-8 as standard encoding and en_GB as the standard language
 set encoding=utf8
 
-map <F6> :setlocal spell! spelllang=en_gb<CR> " Spell checker on/off
+map <F6> :setlocal spell! spelllang=en_gb<CR>   " English spell-checker on/off
+map <F7> :set spelllang=es_es<CR>               " Spanish spell-checker
 
 " Status Line
 set laststatus=2    " Always show the status line

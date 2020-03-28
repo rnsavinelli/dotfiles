@@ -1,0 +1,2 @@
+# |!/bin/sh
+astyle --style=kr --indent=tab src/*
