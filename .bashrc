@@ -35,17 +35,17 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
-red=$(tput setaf 12)
+blue=$(tput setaf 32)
 white=$(tput setaf 255)
 bold=$(tput bold)
 reset=$(tput sgr0)
 
 if [ "$color_prompt" = yes ]; then
 	PS1='\[${bold}\]'
-    PS1+='\[${red}\][\u@\h'	# username@hostname
-	PS1+='\[${white}\] \w'		# working directory
-	PS1+='\[${red}\]] '
-	PS1+='\[${white}\]$ '
+    PS1+='\[${blue}\][\u@\h'	# username@hostname
+	PS1+='\[${white}\] \W'		# working directory
+	PS1+='\[${blue}\]]'
+	PS1+='\[${white}\]\$ '
 	PS1+='\[${reset}'
 else
     PS1='[\u@\h \W]\$ '

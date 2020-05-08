@@ -1,19 +1,27 @@
 " Use filetype-based syntax highlighting, ftplugins, and indentation.
+set nocompatible
 filetype plugin indent on
 syntax on
+set encoding=utf-8
+
+" Disable the default Vim startup message.
+set shortmess+=I
 
 " Set to auto read when a file is changed from the outside
 set autoread
 au FocusGained,BufEnter * checktime
 
 " Enables mouse support
-set mouse=a
+" set mouse=a
 
-" More convenient Movement when lines are wrapped
+" More convenient  Movement when lines are wrapped
 nmap j gj
+nmap <Down> gj
 nmap k gk
+nmap <Up> gk
 
-set wildmenu	    " Turn on the Wild menu
+" Turn on the Wild menu
+set wildmenu
 
 let mapleader = "," " Map-leader
 
@@ -22,8 +30,10 @@ set number          " Show line numbers
 set foldcolumn=1    " Add a bit extra margin to the left
 set linebreak	    " Break lines at word (requires Wrap lines)
 set showbreak=+++   " Wrap-broken line prefix
-set textwidth=80   " Line wrap (number of cols)
+set textwidth=80    " Line wrap (number of cols)
 set showmatch	    " Highlight matching brace
+set splitbelow
+set splitright
 
 " Search settings
 set hlsearch	    " Highlight all search results
@@ -67,8 +77,8 @@ set laststatus=2    " Always show the status line
 
 " Format the status line
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
- 
-"" Advanced Settings
+
+" Advanced Settings
 set ruler	    " Show row and column ruler information
 
 set viminfo+=n~/.vim/viminfo
@@ -76,6 +86,16 @@ set viminfo+=n~/.vim/viminfo
 set undolevels=1000		" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
 
-"" Copy and Paste
+" Copy and Paste
 vnoremap <C-c> "+y
 map <C-p> "+p
+
+" Automatically delete all trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
+
+" Unbind some useless/annoying default key bindings.
+" 'Q' in normal mode enters Ex mode. You almost never want this.
+nmap Q <Nop>
+
+" Disable audible
+set noerrorbells visualbell t_vb=

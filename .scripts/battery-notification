@@ -1,0 +1,20 @@
+#!/bin/bash
+# Battery level notification script
+# R. Nicolás Savinelli [07/May/2019]
+
+for battery in /sys/class/power_supply/BAT?
+do
+    battery_id=$(echo "$battery" | sed "s/\// /g" | awk '{print $NF}')
+    battery_level=$(cat "$battery"/capacity)
+    battery_state=$(cat "$battery"/status)
+
+    if [ $battery_level -le 40 ] && [ "$battery_state" == "Discharging" ]
+    then
+        if [ $battery_level -gt 15 ]
+        then
+            notify-send "Low Battery (${battery_id})" "Battery level is ${battery_level}%!"
+        else
+            notify-send "Battery Critically Low (${battery_id})" "Battery level is ${battery_level}%!"
+        fi
+    fi
+done

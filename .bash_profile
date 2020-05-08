@@ -6,7 +6,7 @@
 
 export PATH=$PATH:$HOME/.scripts/
 export EDITOR="vim"
-export TERMINAL="gnome-terminal"
+export TERMINAL="st-256color"
 export BROWSER="firefox"
 
 if [[ "$(tty)" = "/dev/tty1" ]]; then
