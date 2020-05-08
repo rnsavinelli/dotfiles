@@ -60,11 +60,13 @@ set so=7	        " Set 7 lines to the cursor - when moving vertically using j/k
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " Enable 256 colours palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
+if $COLORTERM == 'st-256color'
     set t_Co=256
 endif
 
-colorscheme ron
+let g:gruvbox_contrast_dark = 'hard'
+autocmd vimenter * colorscheme gruvbox
+set background=dark
 
 " Set UTF-8 as standard encoding and en_GB as the standard language
 set encoding=utf8

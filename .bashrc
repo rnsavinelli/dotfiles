@@ -42,13 +42,13 @@ reset=$(tput sgr0)
 
 if [ "$color_prompt" = yes ]; then
 	PS1='\[${bold}\]'
-    PS1+='\[${blue}\][\u@\h'	# username@hostname
+    PS1+='\[${blue}\][\u@\h'     # username@hostname
 	PS1+='\[${white}\] \W'		# working directory
 	PS1+='\[${blue}\]]'
 	PS1+='\[${white}\]\$ '
 	PS1+='\[${reset}'
 else
-    PS1='[\u@\h \W]\$ '
+    PS1='${bold}[\u@\h \W]\$ ${reset}'
 fi
 
 unset color_prompt force_color_prompt
