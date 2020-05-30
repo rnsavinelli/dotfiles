@@ -47,12 +47,12 @@ set smartcase	    " When searching try to be smart about cases
 nnoremap <CR> :nohlsearch<CR><CR>
 
 " Tab settings
-set autoindent	    " Auto-indent new lines
-set shiftwidth=4    " Number of auto-indent spaces
-set smartindent	    " Enable smart-indent
-set smarttab	    " Enable smart-tabs
-set tabstop=4       " Number of spaces per Tab
-set expandtab       " Enable expand-tab
+set autoindent
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
 
 set so=7	        " Set 7 lines to the cursor - when moving vertically using j/k
 
@@ -60,11 +60,12 @@ set so=7	        " Set 7 lines to the cursor - when moving vertically using j/k
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " Enable 256 colours palette in Gnome Terminal
-if $COLORTERM == 'st-256color'
+ if $COLORTERM == 'st-256color'
     set t_Co=256
 endif
 
 let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_termcolors = '256'
 autocmd vimenter * colorscheme gruvbox
 set background=dark
 
@@ -89,8 +90,8 @@ set undolevels=1000		" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
 
 " Copy and Paste
-vnoremap <C-c> "+y
-map <C-p> "+p
+vnoremap <C-c> "+y :let @*=@+<CR>
+map <C-v> "+p
 
 " Automatically delete all trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e

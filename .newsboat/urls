@@ -1,21 +1,8 @@
-## UTN FRBA ##
-https://www.freelists.org/feed/frba.utn.ayed "university" "utn"
-
-## University Research ##
-https://news.stanford.edu/section/science-technology/feed/ "university"
-https://news.stanford.edu/section/social-sciences/feed/ "university"
-https://news.harvard.edu/gazette/section/science-technology/feed/ "university"
-https://news.harvard.edu/gazette/section/national-world-affairs/feed/ "university"
-https://news.mit.edu/rss/school/engineering "university"
-https://news.mit.edu/rss/school/humanities-arts-and-social-sciences "university"
-
 ## Linux ##
 https://www.archlinux.org/feeds/news/ "tech" "linux"
 
-## Institutional  ##
-http://ocw.mit.edu/rss/new/mit-newocwscholarcourses.xml "courses"
-https://ocw.mit.edu/rss/new/mit-newcourses-6.xml "courses"
+## UTN FRBA ##
+https://www.freelists.org/feed/frba.utn.ayed "university" "~AED: Recent news updates"
 
 ## Others ##
-https://lukesmith.xyz/rss.xml "not related"
-https://rnsavinelli.github.io/rss.xml "not related"
+https://rnsavinelli.github.io/rss.xml "personal"

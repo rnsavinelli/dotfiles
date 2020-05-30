@@ -5,7 +5,7 @@
 # URL to StevenBlack/hosts hosts file
 # For more information on which hosts file to use visit:
 # https://github.com/StevenBlack/hosts
-hosts_file="https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts"
+hosts_file="https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts"
 hosts_temp=$(mktemp)
 
 # Makes sure only root can run the script

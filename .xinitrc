@@ -5,4 +5,4 @@
 
 exec cinnamon-session
 
-exec ./.scripts/gpu_offloading.sh
+exec offload-gpu
