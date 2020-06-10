@@ -1,0 +1,3 @@
+#picom -b
+#dwmblocks &
+#dunst &
