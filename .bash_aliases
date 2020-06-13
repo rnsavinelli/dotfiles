@@ -9,6 +9,7 @@ alias vg='valgrind -q --tool=memcheck --leak-check=full'
 alias cmp='g++ -std=c++17 -Wall -pedantic-errors -g3'
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 alias spaces-to-tabs="sed -i 's/    /\t/g'"
+alias camera='ffplay -f v4l2 -framerate 30 -vf hflip -video_size 640x480 /dev/video0'
 
 # NVIDIA PRIME
 alias offload='DRI_PRIME=1'

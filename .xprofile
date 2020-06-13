@@ -1,3 +1,4 @@
-#picom -b
-#dwmblocks &
-#dunst &
+#setxkbmap -option caps:escape
+numlockx &
+xwallpaper --zoom "/usr/share/backgrounds/others/Thomas Couture -Romains de la décadence.jpg"
+picom -b

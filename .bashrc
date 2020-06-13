@@ -35,17 +35,17 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
-blue=$(tput setaf 32)
+red=$(tput setaf 1)
 white=$(tput setaf 255)
 bold=$(tput bold)
 reset=$(tput sgr0)
 
 if [ "$color_prompt" = yes ]; then
 	PS1='\[${bold}\]'
-    PS1+='\[${blue}\][\u@\h'    # username@hostname
-	PS1+='\[${white}\] \W'		# working directory
-	PS1+='\[${blue}\]]'
-	PS1+='\[${white}\]\$ '
+    PS1+='\[${red}\]['
+	PS1+='\[${white}\]\w'
+	PS1+='\[${red}\]]'
+	PS1+='\[${white}\]$ '
 	PS1+='\[${reset}'
 else
     PS1='${bold}[\u@\h \W]\$ ${reset}'
@@ -56,7 +56,7 @@ unset color_prompt force_color_prompt
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls -FXgh --group-directories-first --color=auto'
+    alias ls='ls -gG --author --group-directories-first --color=auto'
     alias dir='dir --color=auto'
     alias vdir='vdir --color=auto'
 
@@ -90,6 +90,13 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+fi
+
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ ! "$SSH_AUTH_SOCK" ]]; then
+    eval "$(<~/.ssh-agent-thing)"
 fi
 
 # # ex - archive extractor
