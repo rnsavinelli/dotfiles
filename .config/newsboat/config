@@ -1,0 +1,10 @@
+# Browser
+browser firefox
+
+# Limit articles per feed
+max-items 35
+
+# Podboat Configuration
+download-path "~/Music/podcasts"
+max-downloads 2
+player "mpv --no-video"
