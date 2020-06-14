@@ -2,3 +2,7 @@
 numlockx &
 xwallpaper --zoom "/usr/share/backgrounds/others/Thomas Couture -Romains de la décadence.jpg"
 picom -b
+redshift &
+dunst -font "Cantarell Regular 12" -horizontal_padding 6 -notification_height 20 -nf "#222222" -nb "#F0F0F0" -frame_width 2 -frame_color "#F0F0F0" -format "<b>%s</b>\n%b" -history_key "ctrl+h" -all_key "ctrl+o" &
+network-traffic -u &
+xautolock -time 10 -locker slock &

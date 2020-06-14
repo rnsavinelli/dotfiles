@@ -23,7 +23,7 @@ update_cache() {
 
 notify() {
     notify-send "Network traffic update" \
-    "$(printf "Device: wlp3s0\n\nReceived: %s kB\nTransmitted: %s kB\\n" \
+    "$(printf "$(echo $device)\n\nReceived: %s kB\nTransmitted: %s kB\\n" \
 	"$(((rxcurrent-${prevdata%% *})/1024))" \
     "$(((txcurrent-${prevdata##* })/1024))")"
 }
