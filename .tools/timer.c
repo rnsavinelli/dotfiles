@@ -1,8 +1,29 @@
+#include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
-int main (int argc, char *argv[]) {
+#define NOTIFICATION "notify-send \"Time is up!\" \"Timer countdown finished\""
+#define BELL "paplay /usr/share/sounds/freedesktop/stereo/complete.oga"
+
+void
+run_command(const char *cmd)
+{
+	FILE *fp;
+
+	if (!(fp = popen(cmd, "r"))) {
+		perror("popen");
+		return;
+	}
+
+	if (pclose(fp) < 0) {
+		perror("pclose");
+		return;
+	}
+}
+
+int
+main (int argc, char *argv[]) {
     float time;
 
     if (argc == 1) {
@@ -26,8 +47,9 @@ int main (int argc, char *argv[]) {
             }
 
             printf("Time is up!\n");
-            system("notify-send \"Time is up!\" \"Timer countdown finished\"");
-            system("paplay /usr/share/sounds/freedesktop/stereo/complete.oga");
+
+            run_command(NOTIFICATION);
+            run_command(BELL);
         }
     }
 
