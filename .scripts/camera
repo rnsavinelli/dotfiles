@@ -1,0 +1,4 @@
+#!/bin/bash
+# Launch camera
+
+ffplay -f v4l2 -framerate 30 -vf hflip -video_size 640x480 /dev/video0
