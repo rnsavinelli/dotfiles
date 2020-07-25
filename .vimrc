@@ -4,15 +4,9 @@ filetype plugin indent on
 syntax on
 set encoding=utf-8
 
-" Disable the default Vim startup message.
-set shortmess+=I
-
 " Set to auto read when a file is changed from the outside
 set autoread
 au FocusGained,BufEnter * checktime
-
-" Enables mouse support
-" set mouse=a
 
 " More convenient  Movement when lines are wrapped
 nmap j gj
@@ -28,11 +22,11 @@ let mapleader = "," " Map-leader
 " Appearance and Behaviour
 set number          " Show line numbers
 set foldcolumn=1    " Add a bit extra margin to the left
-set linebreak	    " Break lines at word (requires Wrap lines)
-set showbreak=+++   " Wrap-broken line prefix
-set textwidth=80    " Line wrap (number of cols)
+"set linebreak	    " Break lines at word (requires Wrap lines)
+"set showbreak=+++   " Wrap-broken line prefix
+"set textwidth=80    " Line wrap (number of cols)
 set showmatch	    " Highlight matching brace
-set relativenumber
+"set relativenumber
 set showcmd
 
 " Search settings
@@ -47,30 +41,27 @@ set smartcase	    " When searching try to be smart about cases
 nnoremap <CR> :nohlsearch<CR><CR>
 
 " Tab settings
-set autoindent
-set smartindent
+set ai
+"set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set smarttab
+"set smarttab
 
-set so=7	        " Set 7 lines to the cursor - when moving vertically using j/k
+"set so=7	        " Set 7 lines to the cursor - when moving vertically using j/k
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " Enable 256 colours palette in Gnome Terminal
- if $COLORTERM == 'st-256color'
-    set t_Co=256
-endif
+" if $COLORTERM == 'st-256color'
+"    set t_Co=256
+"endif
 
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_termcolors = '256'
 autocmd vimenter * colorscheme gruvbox
 set background=dark
-
-" Set UTF-8 as standard encoding and en_GB as the standard language
-set encoding=utf8
 
 map <F6> :setlocal spell! spelllang=en_gb<CR>   " English spell-checker on/off
 map <F7> :set spelllang=es_es<CR>               " Spanish spell-checker
