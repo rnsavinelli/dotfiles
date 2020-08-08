@@ -35,16 +35,16 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
-red=$(tput setaf 1)
+blue=$(tput setaf 32)
 white=$(tput setaf 255)
 bold=$(tput bold)
 reset=$(tput sgr0)
 
 if [ "$color_prompt" = yes ]; then
 	PS1='\[${bold}\]'
-    PS1+='\[${red}\]['
-	PS1+='\[${white}\]\w'
-	PS1+='\[${red}\]]'
+	PS1+='\[${blue}\][\u'
+	PS1+='\[${white}\] \w'
+	PS1+='\[${blue}\]]'
 	PS1+='\[${white}\]$ '
 	PS1+='\[${reset}'
 else
@@ -57,7 +57,7 @@ unset color_prompt force_color_prompt
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls -gG --author --group-directories-first --color=auto'
-    alias dir='dir --color=auto'
+    alias dir='ls --color=auto'
     alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
