@@ -10,6 +10,7 @@ alias cmp='g++ -std=c++17 -Wall -pedantic-errors -g3'
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 alias spaces-to-tabs="sed -i 's/    /\t/g'"
 alias kr='astyle --style=kr --indent=tab'
+alias pcm='paccache -rk2 -ruk0'
 
 # NVIDIA PRIME
 alias offload='DRI_PRIME=1'
