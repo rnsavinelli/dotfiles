@@ -1,7 +1,9 @@
-#setxkbmap -option caps:escape
+#setxkbmap -option caps:escape &
 #numlockx &
+#autorandr --load default
 #xwallpaper --zoom "/usr/share/backgrounds/others/Thomas Couture -Romains de la décadence.jpg"
 #picom -b
-redshift-gtk &
-network-traffic -u &
+#xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
 #xautolock -time 10 -locker slock &
+#redshift-gtk &
+#network-traffic -u &
