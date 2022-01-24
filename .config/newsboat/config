@@ -1,5 +1,5 @@
 # Browser
-browser firefox
+browser brave
 
 # Limit articles per feed
 max-items 35

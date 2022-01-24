@@ -5,5 +5,7 @@
 #picom -b
 #xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
 #xautolock -time 10 -locker slock &
+#dunst &
 #redshift-gtk &
 #network-traffic -u &
+solaar --window hide &

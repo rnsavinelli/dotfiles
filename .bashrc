@@ -2,6 +2,12 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+
+export PATH=$PATH:/home/rnsavinelli/.scripts:/home/rnsavinelli/.local/bin
+export EDITOR=/usr/bin/vim
+export TERMINAL=/usr/bin/gnome-terminal
+export BROWSER=brave
+
 # Disable ctrl-s and ctrl-q
 stty -ixon
 
