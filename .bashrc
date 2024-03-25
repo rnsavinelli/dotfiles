@@ -3,10 +3,10 @@
 # for examples
 
 
-export PATH=$PATH:/home/rnsavinelli/.scripts:/home/rnsavinelli/.local/bin
+export PATH=$PATH:/home/rnsavinelli/.local/bin
 export EDITOR=/usr/bin/vim
-export TERMINAL=/usr/bin/gnome-terminal
-export BROWSER=brave
+export TERMINAL=/usr/local/bin/st
+export BROWSER=/usr/bin/chromium
 
 # Disable ctrl-s and ctrl-q
 stty -ixon
@@ -47,14 +47,10 @@ bold=$(tput bold)
 reset=$(tput sgr0)
 
 if [ "$color_prompt" = yes ]; then
-	PS1='\[${bold}\]'
-	PS1+='\[${blue}\][\u'
-	PS1+='\[${white}\] \w'
-	PS1+='\[${blue}\]]'
-	PS1+='\[${white}\]$ '
+	PS1='\[${bold}\]\u@\h \w % '
 	PS1+='\[${reset}'
 else
-    PS1='${bold}[\u@\h \W]\$ ${reset}'
+    PS1='${bold}[\w] ${reset}'
 fi
 
 unset color_prompt force_color_prompt
@@ -83,9 +79,26 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+alias cp='cp -i'      # confirm before overwriting something
+alias df='df -h'      # human-readable sizes
+alias free='free -m'  # show sizes in MB
+alias more='less'
+alias sizeof='du -sh'
+alias pacman='yay'
+
+alias vg='valgrind -q --tool=memcheck --leak-check=full'
+alias cmp='g++ -std=c++17 -Wall -pedantic-errors -g3'
+alias kr='astyle --style=kr --indent=tab'
+alias pcm='paccache -rk2 -ruk0'
+
+# Directory shortcuts
+alias home='cd ~/'
+alias downloads='cd ~/Downloads'
+alias uol='cd ~/Documents/uol'
+alias uol4='cd ~/Documents/uol/Level\ 4/'
+alias uol5='cd ~/Documents/uol/Level\ 5/'
+alias uol6='cd ~/Documents/uol/Level\ 6/'
+alias github='cd ~/Sources'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -96,13 +109,6 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
-fi
-
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent > ~/.ssh-agent-thing
-fi
-if [[ ! "$SSH_AUTH_SOCK" ]]; then
-    eval "$(<~/.ssh-agent-thing)"
 fi
 
 # # ex - archive extractor
