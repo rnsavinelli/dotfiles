@@ -1,3 +1,6 @@
-numlockx &
 xwallpaper --zoom "/usr/share/backgrounds/personal/cambridge.jpg" &
+numlockx &
 dunst &
+zoom &
+spotify &
+slack &

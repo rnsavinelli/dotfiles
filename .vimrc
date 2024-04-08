@@ -58,10 +58,10 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 "    set t_Co=256
 "endif
 
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_termcolors = '256'
-autocmd vimenter * colorscheme gruvbox
-set background=dark
+" let g:gruvbox_contrast_dark = 'hard'
+" let g:gruvbox_termcolors = '256'
+" autocmd vimenter * colorscheme gruvbox
+" set background=dark
 
 map <F6> :setlocal spell! spelllang=en_gb<CR>   " English spell-checker on/off
 map <F7> :set spelllang=es_es<CR>               " Spanish spell-checker
